@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
     <!-- 引入自己的文件 -->
     <link rel="stylesheet" href="./dist/css/minCss/index.min.css">
+    
 </head>
 
 <body>

@@ -18,13 +18,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="index.php">首页</a></li>
-
-                <li><a href="#">小强</a></li>
-
-                <li><a href="#">赶快充值</a></li>
-                
-                <li><a href="#">注销</a></li>
+                <li id="homepage"><a href="index.php">首页</a></li>
                 
                 <li><a href="#">帮助</a></li>
                 
@@ -36,5 +30,36 @@
     </div>
     <!-- /.container-fluid -->
 </nav>
+
+    <!-- 引入jQuery -->
+<script src="./lib/jquery/jquery.min.js"></script>
+    <!-- 根据登录的状态 显示不同的菜单 -->
+    <script>
+        $.get("./api/checkState.php", function (data) {
+            // console.log(data);
+            if(data.isSuccess){
+            //显示登录后菜单
+            var htmlStr=`<li><a href="#">${data.username}</a></li>
+            <li><a href="#">赶快充值</a></li>
+            <li><a href="./api/loginOut.php">注销</a></li>`;
+            /* 
+            父亲中插入儿子
+            append() - 在被选元素的结尾插入内容
+            prepend() - 在被选元素的开头插入内容
+
+            兄弟前后插入兄弟
+            after() - 在被选元素之后插入内容
+            before() - 在被选元素之前插入内容
+             */
+            $("#homepage").after(htmlStr);
+        }
+        else{
+            //显示登录前菜单
+            var htmlStr=`<li><a href="./register.php">注册</a></li>
+            <li><a href="./login.php">登录</a></li>`;
+            $("#homepage").after(htmlStr);
+        }
+    },"json");
+    </script>
 
 

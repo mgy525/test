@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>p2p登录页面</title>
+    <title>p2p注册页面</title>
 
     <!-- 引入核心文件 -->
     <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
@@ -19,7 +19,6 @@
         require_once('headerLoginNav.php')
     ?>
 
-    <!-- 主导航栏 -->
     <nav class="navbar navbar-default">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -27,18 +26,21 @@
                 <a class="navbar-brand" href="#">
                     <img src="./images/logo.png" alt="">
                 </a>
-                <span class="long-reg">
-                    用户登录/注册
-                </span>
             </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <ul class="nav navbar-nav">
+                <li class="long-reg">
+                    <p>用户登录/注册</p>
+                </li>
+            </ul>
         </div>
-        <!-- /.container-fluid -->
     </nav>
     <div class="container">
         <div class="panel panel-default">
-            <div class="panel-heading">用户登录</div>
+            <div class="panel-heading">用户注册</div>
             <div class="panel-body">
-                <form class="form-horizontal">
+                <form id="regForm" class="form-horizontal" method="post">
                     <p>请填写注册信息，点击“提交注册”即可完成注册！</p>
                     <!-- 用户名 -->
                     <div class="form-group">
@@ -72,7 +74,7 @@
                     <div class="form-group">
                         <label for="inputPassword3" class="col-sm-3 control-label">邮箱</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" name="emily" placeholder="请输入邮箱">
+                            <input type="text" class="form-control" name="email" placeholder="请输入邮箱">
                         </div>
                     </div>
                     <div class="form-group">
@@ -95,10 +97,12 @@
     <script src="./lib/jquery/jquery.min.js"></script>
     <!-- 引入bootstrap核心库 -->
     <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+    <!-- 引入bootstrapValidator文件库 -->
+    <script src="./lib/bootstrapValidator/js/bootstrapValidator.min.js"></script>
     <!-- 引入自定义效果 -->
     <script src="./dist/js/p2p.min.js"></script>
     <!-- 引入表单验证 -->
-    <script src="./dist/js/register.min.js"></script>
+    <script src="./dist/js/regLogin.min.js"></script>
 </body>
 
 </html>
