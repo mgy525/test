@@ -1,0 +1,40 @@
+// 头部样式
+@import url('header.less');
+
+@import url('personal-template-left.less');
+
+#btnOnOff{
+    display: none;
+}
+
+@media all and (max-width: 768px){
+    .mycontent{
+        height: 900px;
+        position: relative;
+        left: 0px;
+        transition: all 1s;
+        
+        #leftNav{
+            position: absolute;
+        }
+        #reightcontent{
+            position: absolute;
+            right: -50%;
+        }
+        #btnOnOff{
+            position: absolute;
+            top:0;
+            display: inline-block;
+        }
+    }
+    .mycontent.active{
+        left: -50%;
+    }
+}
+
+
+
+
+
+// 尾部样式
+@import url('footer.less');

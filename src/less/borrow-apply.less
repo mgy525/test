@@ -1,0 +1,63 @@
+// 头部样式
+@import url('header.less');
+
+@import url('personal-template-left.less');
+
+.el-borrow-form{
+    position: relative;
+}
+.el-borrow-form-tip{
+    width: 300px;
+    border-radius: 3px;
+    border:1px solid #ddd;
+    box-shadow: 1px 1px 20px #ddd;
+    padding:20px 30px;
+    position: absolute;
+    top:10px;
+    right: 100px;
+}
+
+.el-tip-info{
+    padding:20px;
+    background-color: #F4F8FA;
+    border-left: 2px solid #0099DD;
+    margin-bottom: 20px;
+}
+.el-tip-info h3{
+    color:#09d;
+}
+
+
+#btnOnOff{
+    display: none;
+}
+
+@media all and (max-width: 768px){
+    .mycontent{
+        height: 900px;
+        position: relative;
+        left: 0px;
+        transition: all 1s;
+        
+        #leftNav{
+            position: absolute;
+        }
+        #reightcontent{
+            position: absolute;
+            right: -50%;
+        }
+        #btnOnOff{
+            position: absolute;
+            top:0;
+            display: inline-block;
+        }
+    }
+    .mycontent.active{
+        left: -50%;
+    }
+}
+
+
+
+// 尾部样式
+@import url('footer.less');
